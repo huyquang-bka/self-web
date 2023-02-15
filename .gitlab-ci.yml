@@ -9,4 +9,4 @@ deploy:
     - docker rm -f self_web || true
     - docker run -d --name self_web -p 8501:8501 self_web
   only:
-    - master
+    - main
