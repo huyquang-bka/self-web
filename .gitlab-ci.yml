@@ -1,6 +1,7 @@
 ---
 variables:
   IMAGE_NAME: self_web
+  CONTAINER_NAME: self_web
   SSH_USER: ubuntu
   SSH_HOST: 54.179.122.138
 
@@ -31,6 +32,6 @@ deploy:
   script:
     - echo "Deploying to production"
     - ssh -i $SSH_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
-      docker pull $IMAGE_NAME && docker stop $IMAGE_NAME && docker rm $IMAGE_NAME && docker run -d --name $IMAGE_NAME -p 8501:8501 $IMAGE_NAME"
+      docker pull huyquang/$IMAGE_NAME && docker rm -f $CONTAINER_NAME && docker run -d --name $CONTAINER_NAME -p 8501:8501 huyquang/$IMAGE_NAME"
   only:
     - main
