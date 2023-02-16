@@ -1,6 +1,5 @@
-from gtts import gTTS
-import playsound
+import json
 
-tts = gTTS(text='Vị trí D3', lang='vi')
-tts.save("welcome.mp3")
-playsound.playsound("welcome.mp3")
+with open("resources/project.json") as f:
+    lottie_coding = json.load(f)
+print(lottie_coding)
