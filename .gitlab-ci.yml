@@ -8,7 +8,6 @@ variables:
 stages:
   - build
   - deploy
-  # - test
 
 build:
   stage: build
@@ -24,7 +23,7 @@ build:
     - docker tag huyquang/$IMAGE_NAME huyquang/$IMAGE_NAME
     - docker push huyquang/$IMAGE_NAME
   only:
-- main
+    - main
 
 deploy:
   stage: deploy
@@ -33,13 +32,12 @@ deploy:
   script:
     - echo "Deploying to production"
     - ssh -i $SSH_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
-      docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD && 
-      docker pull huyquang/$IMAGE_NAME && 
-      docker rm -f $CONTAINER_NAME && 
+      docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD &&
+      docker pull huyquang/$IMAGE_NAME &&
+      docker rm -f $CONTAINER_NAME &&
       docker run -d --name $CONTAINER_NAME -p 8501:8501 huyquang/$IMAGE_NAME"
   only:
     - main
-
 # test:
 #   stage: test
 #   image: ubuntu:20.04
