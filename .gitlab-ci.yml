@@ -5,7 +5,7 @@ variables:
   SSH_HOST: 54.179.122.138
 
 stages:
-  - build
+  # - build
   - deploy
 
 build:
@@ -26,6 +26,11 @@ build:
 
 deploy:
   stage: deploy
+  before_script:
+    - echo "$SSH_KEY" | base64 -d > /tmp/id_rsa
+    - chmod 600 /tmp/id_rsa
+    - eval $(ssh-agent -s)
+    - ssh-add /tmp/id_rsa
   script:
     - echo "Deploying to production"
     - ssh -i $SSH_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
