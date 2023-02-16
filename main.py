@@ -37,7 +37,7 @@ st.write("---")
 st.title("About me")
 st.subheader("Who am I?")
 st.write(
-    "I am interested in AI and Machine Learning. I am currently working as a AI developer at [![ATIN](https://atin.com.vn/images/logo/3.png)](https://atin.com.vn)"
+    "I am an AI Engineer with 2 years of experience. I am currently working as an AI developer at [![ATIN](https://atin.com.vn/images/logo/3.png)](https://atin.com.vn)"
 )
 
 st.subheader("What I do?")
@@ -79,7 +79,7 @@ st.write("---")
 st.title("My Projects")
 for project in project_list:
     with st.container():
-        image_column, text_column = st.columns([1, 4])
+        image_column, text_column = st.columns([1, 3])
         with image_column:
             st.image(project["image"])
         with text_column:
