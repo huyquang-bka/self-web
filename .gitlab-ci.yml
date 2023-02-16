@@ -22,7 +22,7 @@ stages:
 #     - docker tag huyquang/$IMAGE_NAME huyquang/$IMAGE_NAME
 #     - docker push huyquang/$IMAGE_NAME
 #   only:
-    - main
+# - main
 
 deploy:
   stage: deploy
