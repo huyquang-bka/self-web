@@ -47,7 +47,7 @@ st.write("- Smart parking system")
 st.write("- Smart traffic system")
 st.write("- Face recognition system")
 
-st.subheader("More about me?")
+st.subheader("More about my skills?")
 
 # github
 git_html = """<a href="https://github.com/huyquang-bka">
