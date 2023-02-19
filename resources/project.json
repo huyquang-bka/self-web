@@ -1,14 +1,32 @@
 [
   {
-    "name": "Smart Parking",
-    "image": "resources/images/smartparking.png",
-    "description": "blah blah blah",
-    "url": "https://www.youtube.com/watch?v=JxherfBbTN8"
+    "name": "Smart Traffic",
+    "image": "resources/images/smart-traffic.png",
+    "description": "This is a project that I did last year. It is a **Smart Traffic** system that uses computer vision to recognize license plate, car's model, car's color, save information to databse and stream the data to a web server. ",
+    "url": "https://youtu.be/aFUYxwfvtmk"
+  },
+  {
+    "name": "Face Recognition",
+    "image": "resources/images/face-recognition.png",
+    "description": "This project is for Face Recognition. It will recognize the face in front of the camera and find information about that person from the database.",
+    "url": "https://youtu.be/yYDoTtuGbYQ"
+  },
+  {
+    "name": "Crowd Counting",
+    "image": "resources/images/crowd.png",
+    "description": "This is my self project. It is a **Crowd Counting** system that uses computer vision to recognize people in the video and count the number of people. It will show warning when the number of people is over the limit.",
+    "url": "https://youtu.be/Vr1BTIUrEZM"
   },
   {
     "name": "Smart Parking",
-    "image": "resources/images/smartparking.png",
-    "description": "blah blah blah",
-    "url": "https://www.youtube.com/watch?v=JxherfBbTN8"
+    "image": "resources/images/smart-parking.png",
+    "description": "This is a project that I did when i was in the Lab. It is a **Smart Parking** system that uses computer vision to detect the free and occupied parking space and stream the data to a web server.",
+    "url": "https://www.youtube.com/watch?v=0Gwei22QWhw"
+  },
+  {
+    "name": "Smart Parking Upgraded",
+    "image": "resources/images/smart-parking-upgraded.png",
+    "description": "This is a project that is upgraded from the previous one. It is a **Smart Parking** system that uses computer vision to detect the free and occupied parking space. It will also recognize the license plate and tracking the car's movement. to re-indentify the car from multiple cameras.",
+    "url": "https://youtu.be/_s61YssnlI0"
   }
 ]

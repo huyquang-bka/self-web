@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM huyquang/self_web
 
 RUN apt-get update && apt-get install -y \
     gcc \

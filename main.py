@@ -26,9 +26,7 @@ st.set_page_config(page_title="HuyWang Website", page_icon=":robot_face:",
 with st.container():
     introduce_column, lottie_column = st.columns(2)
     with introduce_column:
-        st.title("Hi I am HuyWang :wave:")
-        st.write(
-            "My name is Nguyen Huy Quang. People call me HuyWang so you can call me that too :smiley: I create this website for my portfolio :robot_face:")
+        st.title("Hi I am HuyWang, an AI engineer :wave:")
     with lottie_column:
         st_lottie(lottie_coding, speed=1, height=200, key="initial")
 
@@ -45,9 +43,9 @@ st.write("Find solutions to problems using AI and Machine Learning. Develop AI p
 
 st.subheader("What I have done?")
 # st.write("I have done:")
-st.write("- AI for smart parking system")
-st.write("- AI for smart traffic system")
-st.write("- AI for face recognition system")
+st.write("- Smart parking system")
+st.write("- Smart traffic system")
+st.write("- Face recognition system")
 
 st.subheader("More about me?")
 
@@ -71,6 +69,17 @@ st.write("\n")
 # st.download_button(label="Download CV", file_name="Huy Quang CV.pdf",
 #                    data=open("resources/CV.pdf", "rb").read())
 
+# Archive Section
+st.write("---")
+st.title("My Archivement")
+st.write("##")
+st.subheader("Scientific Research Competition")
+st.write("3rd Prize in Scientific Research of Hanoi University of Science & Technology 2020")
+
+st.write("##")
+st.subheader("ICCE 2020 paper")
+st.write("[A Novel Method for Quantification of Vacant Parking Spaces at On-Street Parking Lots](https://ieeexplore.ieee.org/document/9852046)")
+
 # Project Section
 with open("resources/project.json") as f:
     project_list = json.load(f)
@@ -86,7 +95,7 @@ for project in project_list:
             st.subheader(project["name"])
             st.write(project["description"])
             st.write("[Watch Demo]({})".format(project["url"]))
-        st.write("\n")
+        st.write("##")
 
 # Footer Section
 st.write("---")
