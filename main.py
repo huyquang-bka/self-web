@@ -2,6 +2,13 @@ import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_lottie import st_lottie
 import json
+import sqlite3
+
+
+db = sqlite3.connect("resources/database.db", check_same_thread=False)
+cursor = db.cursor()
+command = "CREATE TABLE IF NOT EXISTS contact (name TEXT, email TEXT, message TEXT)"
+cursor.execute(command)
 
 
 def load_lottieurl(path):
@@ -108,6 +115,9 @@ with st.container():
         your_message = st.text_area("Your Message", placeholder="Your Message")
         if st.button("Send"):
             if your_name and your_email and your_message:
+                command = "INSERT INTO contact VALUES (?, ?, ?)"
+                cursor.execute(command, (your_name, your_email, your_message))
+                db.commit()
                 st.success("Thanks for your message!")
             else:
                 st.error("Please fill in all fields!")
