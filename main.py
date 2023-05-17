@@ -1,3 +1,4 @@
+
 import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_lottie import st_lottie
@@ -5,23 +6,15 @@ import json
 import sqlite3
 
 
-db = sqlite3.connect("resources/database.db", check_same_thread=False)
-cursor = db.cursor()
-command = "CREATE TABLE IF NOT EXISTS contact (name TEXT, email TEXT, message TEXT)"
-cursor.execute(command)
-
-
 def load_lottieurl(path):
     with open(path) as f:
         return json.load(f)
 
 
-embedded_linkedin = {
-    "linkedin": """<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="huy-quang-nguyen-559879209" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://vn.linkedin.com/in/huy-quang-nguyen-559879209?trk=profile-badge">Huy Quang Nguyen</a></div>
-    data-rss=
-              """}
-
+db = sqlite3.connect("resources/database.db", check_same_thread=False)
+cursor = db.cursor()
+command = "CREATE TABLE IF NOT EXISTS contact (name TEXT, email TEXT, message TEXT)"
+cursor.execute(command)
 
 lottie_coding = load_lottieurl("resources/lottie/ai_animation.json")
 
@@ -42,19 +35,26 @@ st.write("---")
 st.title("About me")
 st.subheader("Who am I?")
 st.write(
-    "I am an AI Engineer with 2 years of experience. I am currently working as an AI developer at [![ATIN](https://atin.com.vn/images/logo/3.png)](https://atin.com.vn)"
+    "I am an AI Engineer with 2 years of experience. I am currently working as an AI developer at [![ATIN](https://atin.com.vn/images/logo/logo.png)](https://atin.com.vn)"
 )
 
 st.subheader("What I do?")
 st.write("Find solutions to problems using AI and Machine Learning. Develop AI products for customers.")
 
 st.subheader("What I have done?")
-# st.write("I have done:")
 st.write("- Smart parking system")
 st.write("- Smart traffic system")
 st.write("- Face recognition system")
 
-st.subheader("More about my skills?")
+st.subheader("My skills?")
+st.write("- Framework: Pytorch, tensorflow")
+st.write("- Object detection: YOLO, Paddle, ...")
+st.write("- App: PyQt5")
+st.write("- Packaging: Docker, CI-CD")
+st.write("- Inference model: TensorRT, Onnx, Openvino")
+st.write("- Model serving: Triton, BentoML")
+
+st.subheader("More about me?")
 
 # github
 git_html = """<a href="https://github.com/huyquang-bka">
@@ -72,9 +72,6 @@ linkedin_html = """<a href="https://www.linkedin.com/in/huy-quang-nguyen-5598792
 st.markdown(linkedin_html, unsafe_allow_html=True)
 
 st.write("\n")
-# Download CV Section
-# st.download_button(label="Download CV", file_name="Huy Quang CV.pdf",
-#                    data=open("resources/CV.pdf", "rb").read())
 
 # Archive Section
 st.write("---")

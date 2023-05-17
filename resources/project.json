@@ -2,7 +2,7 @@
   {
     "name": "Smart Traffic",
     "image": "resources/images/smart-traffic.png",
-    "description": "This is a project that I did last year. It is a **Smart Traffic** system that uses computer vision to recognize license plate, car's model, car's color, save information to databse and stream the data to a web server. ",
+    "description": "This is a project that I did last year. It is a **Smart Traffic** system that uses computer vision to recognize license plate, car's model, car's color, save information to database and stream the data to a web server. ",
     "url": "https://youtu.be/aFUYxwfvtmk"
   },
   {
@@ -24,7 +24,7 @@
     "url": "https://www.youtube.com/watch?v=0Gwei22QWhw"
   },
   {
-    "name": "Smart Parking Upgraded",
+    "name": "Smart Parking Re-id",
     "image": "resources/images/smart-parking-upgraded.png",
     "description": "This is a project that is upgraded from the previous one. It is a **Smart Parking** system that uses computer vision to detect the free and occupied parking space. It will also recognize the license plate and tracking the car's movement. to re-indentify the car from multiple cameras.",
     "url": "https://youtu.be/_s61YssnlI0"
