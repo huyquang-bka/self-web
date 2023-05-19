@@ -26,7 +26,7 @@ st.set_page_config(page_title="HuyWang Website", page_icon=":robot_face:",
 with st.container():
     introduce_column, lottie_column = st.columns(2)
     with introduce_column:
-        st.title("Hi I am HuyWang, an AI engineer :wave:")
+        st.title("Hi I am HuyWang.I am an AI engineer :wave:")
     with lottie_column:
         st_lottie(lottie_coding, speed=1, height=200, key="initial")
 
