@@ -1,9 +1,6 @@
----
 variables:
   IMAGE_NAME: self_web
   CONTAINER_NAME: self_web
-  SSH_USER: ubuntu
-  SSH_HOST: 54.179.122.138
 
 stages:
   - build
@@ -11,37 +8,21 @@ stages:
 
 build:
   stage: build
-  image: docker:20.10.16
-  services:
-    - docker:20.10.16-dind
-  variables:
-    DOCKER_TLS_CERTDIR: "/certs"
-  before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
   script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
     - docker build -t huyquang/$IMAGE_NAME .
-    - docker tag huyquang/$IMAGE_NAME huyquang/$IMAGE_NAME
     - docker push huyquang/$IMAGE_NAME
   only:
     - main
+  tags:
+    - docker
 
 deploy:
   stage: deploy
-  before_script:
-    - chmod 400 $SSH_KEY
   script:
-    - echo "Deploying to production"
-    - ssh -i $SSH_KEY -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "
-      docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD &&
-      docker pull huyquang/$IMAGE_NAME &&
-      docker rm -f $CONTAINER_NAME &&
-      docker run -d --name $CONTAINER_NAME -p 8501:8501 huyquang/$IMAGE_NAME"
+    - docker rm -f $CONTAINER_NAME &&
+    - docker run -d --name $CONTAINER_NAME -p 8501:8501 huyquang/$IMAGE_NAME"
   only:
     - main
-# test:
-#   stage: test
-#   image: ubuntu:20.04
-#   before_script:
-#     - apt-get update && apt-get install -y netcat
-#   script:
-#     - nc 54.179.122.138 8501 -v
+  tags:
+    - docker
