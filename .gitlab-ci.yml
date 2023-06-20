@@ -20,9 +20,10 @@ build:
 deploy:
   stage: deploy
   script:
-    - docker rm -f $CONTAINER_NAME &&
+    - docker stop $CONTAINER_NAME || true
+    - docker rm $CONTAINER_NAME || true
     - docker run -d --name $CONTAINER_NAME -p 8501:8501 huyquang/$IMAGE_NAME"
   only:
-    - main
+    - master
   tags:
     - docker
