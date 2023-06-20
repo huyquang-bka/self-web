@@ -10,6 +10,7 @@ build:
   stage: build
   script:
     # - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+    - echo "Your public ip is $(curl -s ifconfig.me)"
     - docker build -t huyquang/$IMAGE_NAME .
     - docker push huyquang/$IMAGE_NAME
   only:
