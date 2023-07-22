@@ -23,7 +23,7 @@ deploy:
   script:
     - docker stop $CONTAINER_NAME || true
     - docker rm $CONTAINER_NAME || true
-    - docker run -d --name $CONTAINER_NAME -p 8501:8501 huyquang/$IMAGE_NAME
+    - docker run -d --name $CONTAINER_NAME -p 80:80 huyquang/$IMAGE_NAME
   only:
     - main
   tags:
