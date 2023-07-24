@@ -121,5 +121,5 @@ with st.container():
 
     with contact_column:
         st.title("Contact me")
-        st.subheader(":e-mail: huyquangbka@gmail.com")
+        st.subheader(":e-mail: quang.nh6299@gmail.com")
         st.subheader(":telephone_receiver: +84 985 781 815")
