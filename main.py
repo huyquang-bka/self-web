@@ -103,23 +103,23 @@ for project in project_list:
 
 # Footer Section
 st.write("---")
-with st.container():
-    message_column, _, contact_column = st.columns([2, 1, 2])
-    with message_column:
-        st.title("Message me")
-        your_name = st.text_input("Your Name", placeholder="Your Name")
-        your_email = st.text_input("Your Email", placeholder="Your Email")
-        your_message = st.text_area("Your Message", placeholder="Your Message")
-        if st.button("Send"):
-            if your_name and your_email and your_message:
-                command = "INSERT INTO contact VALUES (?, ?, ?)"
-                cursor.execute(command, (your_name, your_email, your_message))
-                db.commit()
-                st.success("Thanks for your message!")
-            else:
-                st.error("Please fill in all fields!")
+# with st.container():
+#     message_column, _, contact_column = st.columns([2, 1, 2])
+#     with message_column:
+#         st.title("Message me")
+#         your_name = st.text_input("Your Name", placeholder="Your Name")
+#         your_email = st.text_input("Your Email", placeholder="Your Email")
+#         your_message = st.text_area("Your Message", placeholder="Your Message")
+#         if st.button("Send"):
+#             if your_name and your_email and your_message:
+#                 command = "INSERT INTO contact VALUES (?, ?, ?)"
+#                 cursor.execute(command, (your_name, your_email, your_message))
+#                 db.commit()
+#                 st.success("Thanks for your message!")
+#             else:
+#                 st.error("Please fill in all fields!")
 
-    with contact_column:
-        st.title("Contact me")
-        st.subheader(":e-mail: quang.nh6299@gmail.com")
-        st.subheader(":telephone_receiver: +84 985 781 815")
+#     # with contact_column:
+st.title("Contact me")
+st.subheader(":e-mail: quang.nh6299@gmail.com")
+st.subheader(":telephone_receiver: +84 985 781 815")
