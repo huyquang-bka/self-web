@@ -76,6 +76,11 @@ st.write("\n")
 # Archive Section
 st.write("---")
 st.title("My Archivement")
+
+st.write("##")
+st.subheader("Google Tensorflow Developer Certificate")
+st.write("[Certificate](https://www.credential.net/d9c1de5a-9823-403b-b388-80f2bc5fcbe2#gs.3dnc5h)")
+
 st.write("##")
 st.subheader("Scientific Research Competition")
 st.write("3rd Prize in Scientific Research of Hanoi University of Science & Technology 2020")
